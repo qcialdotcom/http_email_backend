@@ -1,0 +1,82 @@
+[project]
+name = "http_email_backend"
+dynamic = ["version"]
+
+authors = [{ name = "Kumar Sahil", email = "contact@krsahil.co.in" }]
+
+maintainers = [{ name = "Kumar Sahil", email = "contact@krsahil.co.in" }]
+
+description = "A simple Http email proxy backend for sending emails using HTTP requests through a proxy server."
+
+license = { text = "MIT" }
+
+requires-python = ">=3.12"
+
+dependencies = [
+    "django>=5.0",
+    "premailer>=3.10.0",
+    "requests>=2.32.0",
+]
+
+keywords = [
+    "django",
+    "email",
+    "http",
+    "proxy",
+    "backend",
+    "email-backend",
+    "http-email-backend",
+    "proxy-email-backend",
+    "http-email-proxy-backend",
+    "email-proxy-backend",
+    "email-proxy",
+    "email-proxy-server",
+    "email-proxy-service",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Communications :: Email",
+    "Topic :: Software Development :: Libraries",
+]
+
+[project.urls]
+Homepage = "https://packagesphere.github.io/http_email_backend/"
+Documentation = "https://packagesphere.github.io/http_email_backend/"
+Repository = "https://github.com/packagesphere/http_email_backend"
+Issues = "https://github.com/packagesphere/http_email_backend/issues/"
+
+[build-system]
+requires = ["setuptools>=68", "wheel", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["http_email_backend*"]
+exclude = ["http_email_backend_project*"]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+
+[dependency-groups]
+dev = [
+    "djoser>=2.3.3",
+    "drf-spectacular>=0.29.0",
+    "pytest>=9.0.3",
+    "pytest-django>=4.12.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "http_email_backend_project.settings"
+python_files = ["test_*.py", " *_tests.py"]
+python_classes = ["Test*", "Post*"]
