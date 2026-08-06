@@ -109,6 +109,7 @@ coverage/
 # Ignore build artifacts from IDEs/CI
 *.log
 *.tmp
+temp/
 
 # Docker
 mysql/

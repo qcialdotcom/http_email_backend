@@ -1,0 +1,31 @@
+services:
+  http-smtp-proxy:
+    image: krsahil8825/http-smtp-proxy:latest
+    container_name: http-smtp-proxy
+    restart: unless-stopped
+
+    ports:
+      - "8080:8000"
+
+    environment:
+      ALLOWED_API_KEYS: "mykey1,mykey2"
+      ALLOWED_TOKEN: "Bearer"
+      DEBUG: "false"
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: mailpit
+    restart: unless-stopped
+
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+
+    volumes:
+      - ./temp/mailpit-data:/data
+
+    environment:
+      MP_DATABASE: /data/mailpit.db
+      MP_MAX_MESSAGES: 5000
+      MP_SMTP_AUTH_ACCEPT_ANY: "1"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "1"

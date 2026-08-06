@@ -1,4 +1,5 @@
 import os
+from datetime import timedelta
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -18,7 +19,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "djoser"
+    "rest_framework",
+    "drf_spectacular",
+    "djoser",
 ]
 
 MIDDLEWARE = [
@@ -86,22 +89,56 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-
-MAILERS = {
-    "default": {
-        "BACKEND": "http_email_backend.HttpProxyEmailBackend",
-    },
+REST_FRAMEWORK = {
+    "COERCE_DECIMAL_TO_STRING": False,
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
 }
+
+SIMPLE_JWT = {
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=20),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+}
+
+
+DJOSER = {
+    "USER_CREATE_PASSWORD_RETYPE": True,
+    "SEND_ACTIVATION_EMAIL": True,
+    "ACTIVATION_URL": "activate/{uid}/{token}",
+    "PASSWORD_RESET_CONFIRM_URL": "password/reset/confirm/{uid}/{token}",
+    "USERNAME_RESET_CONFIRM_URL": "email/reset/confirm/{uid}/{token}",
+    "SEND_CONFIRMATION_EMAIL": True,
+}
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "http email backend test",
+    "DESCRIPTION": "API documentation for http email backend, a simple email backend to send email through proxy http server by http request",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "COMPONENT_SPLIT_REQUEST": True,
+}
+
+
+EMAIL_BACKEND = "http_email_backend.HttpProxyEmailBackend"
 
 EMAIL_HOST = os.getenv("EMAIL_HOST", "localhost")
 EMAIL_PORT = int(os.getenv("EMAIL_PORT", "25"))
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "webmaster@localhost")
 EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "False").lower() == "true"
 EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", "False").lower() == "true"
-EMAIL_TIMEOUT = int(os.getenv("EMAIL_TIMEOUT", "10"))
-EMAIL_SSL_KEYFILE = os.getenv("EMAIL_SSL_KEYFILE")
-EMAIL_SSL_CERTFILE = os.getenv("EMAIL_SSL_CERTFILE")
+EMAIL_TIMEOUT = (
+    int(os.getenv("EMAIL_TIMEOUT", "None")) if os.getenv("EMAIL_TIMEOUT") else None
+)
+EMAIL_SSL_KEYFILE = os.getenv("EMAIL_SSL_KEYFILE", None)
+EMAIL_SSL_CERTFILE = os.getenv("EMAIL_SSL_CERTFILE", None)
 
 EMAIL_REQUEST_URL = os.getenv("EMAIL_REQUEST_URL")
 EMAIL_REQUEST_API_KEY = os.getenv("EMAIL_REQUEST_API_KEY")
