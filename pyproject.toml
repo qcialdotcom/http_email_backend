@@ -8,6 +8,8 @@ maintainers = [{ name = "Kumar Sahil", email = "contact@krsahil.co.in" }]
 
 description = "A simple Http email proxy backend for sending emails using HTTP requests through a proxy server."
 
+readme = "README.md"
+
 license = { text = "MIT" }
 
 requires-python = ">=3.12"
