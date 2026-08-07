@@ -1,0 +1,50 @@
+version: 2
+
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+
+    schedule:
+      interval: "weekly"
+
+    open-pull-requests-limit: 10
+    rebase-strategy: "auto"
+
+    commit-message:
+      prefix: "chore(deps)"
+
+    groups:
+      testing:
+        patterns:
+          - "pytest*"
+          - "pytest-django"
+
+      development:
+        patterns:
+          - "djoser"
+          - "drf-spectacular"
+          - "python-dotenv"
+
+    ignore:
+      - dependency-name: "django"
+      - dependency-name: "djangorestframework"
+      - dependency-name: "djangorestframework-simplejwt"
+      - dependency-name: "requests"
+      - dependency-name: "premailer"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+
+    schedule:
+      interval: "monthly"
+
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+
+    commit-message:
+      prefix: "ci(actions)"
+
+    groups:
+      github-actions:
+        patterns:
+          - "*"
