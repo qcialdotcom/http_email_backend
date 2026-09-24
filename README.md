@@ -115,5 +115,5 @@ send_mail(
 
 ## HTTP proxy service Setup
 
-- [HttpSmtpProxy](https://github.com/PackageSphere/HttpSmtpProxy)
-- [HttpSmtpProxy README](https://github.com/PackageSphere/HttpSmtpProxy/blob/master/README.md)
+- [HttpSmtpProxy](https://github.com/QcialDotCom/HttpSmtpProxy)
+- [HttpSmtpProxy README](https://github.com/QcialDotCom/HttpSmtpProxy/blob/master/README.md)

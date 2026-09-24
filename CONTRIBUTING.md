@@ -12,7 +12,7 @@ This project is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By partic
 
 ```bash
 # Clone your fork
-git clone https://github.com/PackageSphere/http_email_backend.git
+git clone https://github.com/QcialDotCom/http_email_backend.git
 cd http_email_backend
 
 uv sync

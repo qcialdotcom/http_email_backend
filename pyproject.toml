@@ -50,10 +50,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://packagesphere.github.io/http_email_backend/"
-Documentation = "https://packagesphere.github.io/http_email_backend/"
-Repository = "https://github.com/packagesphere/http_email_backend"
-Issues = "https://github.com/packagesphere/http_email_backend/issues/"
+Homepage = "https://QcialDotCom.github.io/http_email_backend/"
+Documentation = "https://QcialDotCom.github.io/http_email_backend/"
+Repository = "https://github.com/QcialDotCom/http_email_backend"
+Issues = "https://github.com/QcialDotCom/http_email_backend/issues/"
 
 [build-system]
 requires = ["setuptools>=68", "wheel", "setuptools-scm>=8"]
