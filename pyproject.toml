@@ -54,6 +54,7 @@ Homepage = "https://QcialDotCom.github.io/http_email_backend/"
 Documentation = "https://QcialDotCom.github.io/http_email_backend/"
 Repository = "https://github.com/QcialDotCom/http_email_backend"
 Issues = "https://github.com/QcialDotCom/http_email_backend/issues/"
+Company = "https://qcial.com"
 
 [build-system]
 requires = ["setuptools>=68", "wheel", "setuptools-scm>=8"]
