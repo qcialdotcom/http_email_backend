@@ -71,6 +71,6 @@ cd src && uv run manage.py migrate
 
 - Join our discussions on GitHub
 - Check existing issues first
-- Email: krsahil8825@gmail.com
+- Email: contact@qcial.com
 
 Thank you for contributing! 🎉

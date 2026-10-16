@@ -33,7 +33,7 @@ This Code of Conduct applies to all project spaces, including the repository, is
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at **krsahil8825@gmail.com**. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at **contact@qcial.com**. All complaints will be reviewed and investigated promptly and fairly.
 
 ## Attribution
 

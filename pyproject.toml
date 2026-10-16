@@ -2,9 +2,9 @@
 name = "http_email_backend"
 dynamic = ["version"]
 
-authors = [{ name = "Kumar Sahil", email = "contact@krsahil.co.in" }]
+authors = [{ name = "Qcial.Com", email = "contact@qcial.com" }]
 
-maintainers = [{ name = "Kumar Sahil", email = "contact@krsahil.co.in" }]
+maintainers = [{ name = "Qcial.Com", email = "contact@qcial.com" }]
 
 description = "A simple Http email proxy backend for sending emails using HTTP requests through a proxy server."
 
